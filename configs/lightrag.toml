@@ -1,0 +1,4 @@
+# LightRAG configuration placeholder
+[vector_store]
+# engine   = "supabase"
+# endpoint = "http://localhost:8000"

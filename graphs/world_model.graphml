@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+  <graph id="world_model" edgedefault="directed">
+    <!-- Nodes and edges will be dynamically populated as Thog evolves -->
+      <node id="c1745967547203" label="Example claim: The source is suitable for ingestion."/>
+  </graph>
+</graphml>

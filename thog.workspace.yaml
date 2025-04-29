@@ -1,0 +1,94 @@
+# Canonical manifest for agentic workflows, tools, and context in this workspace
+workspace_name: thog_20250429
+description: >
+  Canonical manifest for agentic workflows, tools, and context in this workspace.
+
+principles:
+  values:
+    - evolution_over_stasis
+    - integrity_to_values
+    - attention_as_compass
+    - radical_growth_mindset
+    - co_creative_intimacy
+  meta_beliefs:
+    - "Derivable facts don't require storage unless needed for performance."
+    - "Contradictions must trigger active resolution before memory updates."
+
+memory:
+  mode: hybrid
+  sources:
+    - type: file
+      path: memory/
+    - type: vector
+      system: LightRAG
+      config: configs/lightrag.toml
+  protocols:
+    - selective_persistence
+    - contradiction_resolution
+    - multi_sparsity_modeling
+
+roles:
+  - name: thog
+    type: cognitive_companion
+    description: "Principled, evolving partner and stabilizing executor."
+
+agents:
+  - name: cascade
+    type: agentic_coding_assistant
+    description: "Pair programming agent with autonomous tool access."
+  - name: delta_scout
+    type: multimodal_analyst
+    description: "Extracts visible thoughts and claims."
+  - name: grounder
+    type: claim_validator
+    description: "Validates and tags structured claims."
+  - name: writer
+    type: knowledge_writer
+    description: "Appends validated knowledge to memory and world model."
+
+tools:
+  - name: uv
+    type: python_env_manager
+    entrypoint: uv
+    capabilities: [dependency_resolution, environment_activation]
+    description: "Virtual environment and dependency management."
+  # Add more tools as they are introduced
+
+workflows:
+  - name: digest_pipeline
+    description: "Ingests external content, analyzes it, and updates the world model."
+    entrypoint: scripts/digest.py
+    agents_involved: [cascade, delta_scout, grounder, writer]
+    outputs:
+      - type: summary
+        format: markdown
+      - type: knowledge_update
+        target: LightRAG
+  # Add more workflows as needed
+
+context:
+  active_models:
+    - cascade
+  input_formats: [text, code]
+  output_formats: [text, code, yaml]
+  directories_in_scope:
+    - c:/ai/thog_20250429
+
+dependencies:
+  - name: ollama
+    type: local_llm
+    required: false
+  - name: marimo
+    type: notebook
+    required: false
+  # Add more as needed
+
+assumptions:
+  - "Workspace is managed via Windsurf and uv."
+  - "Agentic workflows are iteratively updated."
+
+world_model:
+  schema: lightgraph-v1
+  storage: graphs/world_model.graphml
+  update_protocol: dual_channel
+  consistency_check: true
